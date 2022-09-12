@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
+  <title>Product preview card component</title>
+</head>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .container {
+    display: flex;
+    max-width: 700px;
+    margin: 10% auto;
+    overflow-y: hidden;
+  }
+
+  body {
+    background-color: antiquewhite;
+  }
+
+  .content {
+    padding: 30px;
+    /* max-width: 700px; */
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    background-color: #fff;
+    /* margin: 50px; */
+    height: 500px;
+
+    -webkit-border-top-right-radius: 6px;
+    -webkit-border-bottom-right-radius: 6px;
+    -moz-border-radius-topright: 6px;
+    -moz-border-radius-bottomright: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+
+
+
+  .product-image {
+    height: 500px;
+    -webkit-border-top-left-radius: 6px;
+    -webkit-border-bottom-left-radius: 6px;
+    -moz-border-radius-topleft: 6px;
+    -moz-border-radius-bottomleft: 6px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+
+  .product-image2 {
+    display: none;
+  }
+
+  .flex {
+    display: flex;
+    gap: 30px;
+  }
+
+  .text {
+    color: grey;
+  }
+
+  .price {
+    color: green;
+  }
+
+  .content-text {
+    font-size: 100%;
+  }
+
+  button {
+    background-color: green;
+    border: #AC894D;
+    border-radius: 6px;
+    padding: 5%;
+    font-size: 150%;
+    color: #fff;
+    text-align: center;
+  }
+
+  button::before {
+    content: url(./images/icon-cart.svg);
+    margin: 20px;
+  }
+
+  .cart {
+    position: absolute;
+    left: 40%;
+  }
+
+  .flex {
+    display: flex;
+    align-items: center;
+  }
+
+  .price {
+    font-size: 200%;
+  }
+
+  .total-price {
+    text-decoration: line-through;
+  }
+
+  @media (max-width:1024px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      max-width: 700px;
+      margin: 2% auto;
+    }
+
+    .product-image {
+      display: none;
+    }
+
+    .product-image2 {
+      display: block;
+      -webkit-border-top-left-radius: 6px;
+      -webkit-border-top-right-radius: 6px;
+      -moz-border-radius-topleft: 6px;
+      -moz-border-radius-topright: 6px;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .content {
+      padding: 40px;
+      gap: 15px;
+      width: 100%;
+      height: auto;
+    }
+
+    h2 {
+      font-size: 400%;
+    }
+
+    .content-text {
+      font-size: 180%;
+    }
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="bg"><img class="product-image" src="./images/image-product-desktop.jpg" alt="">
+      <img class="product-image2" src="./images/image-product-mobile.jpg" alt="">
+    </div>
+    <div class="content">
+      <p class="text">PERFUME</p>
+      <h2>Gabrielle Essence EauDe Parfum</h2>
+      <p class="content-text text">A floral, solar and voluptuous interpretation by Oliever Polge, Perfumer -Creator for
+        the House of
+        CHANEL</p>
+      <p class="flex"><span class="price">$149.99</span><span class="total-price text">$169.99</span></p>
+
+
+      <button class="btn">Add to cart</button>
+    </div>
+  </div>
+  <script>
+    const btn = document.querySelector('button')
+    btn.addEventListener('click', (events) => {
+      events.preventDefault()
+
+      let price = document.querySelector('.price').innerHTML
+      let imageSrc = document.querySelector('.product-image').src
+      console.log(imageSrc);
+      addItemsToCart(price, imageSrc)
+      updatePrice()
+    })
+    function addItemsToCart(price, imageSrc) {
+      if (imageSrc.src == imageSrc) {
+
+      }
+    }
+
+  </script>
+</body>
+
+</html>
